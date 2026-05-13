@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI Jewellery Caption Generator</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>✨ AI Jewellery Caption Generator</h1>
+
+    <form method="POST">
+
+        <input type="text"
+        name="product"
+        placeholder="Enter Product Type"
+        required>
+
+        <select name="tone">
+
+            <option>Luxury</option>
+            <option>Elegant</option>
+            <option>Minimal</option>
+            <option>Festive</option>
+
+        </select>
+
+        <button type="submit">
+            Generate Caption
+        </button>
+
+    </form>
+
+    {% if caption %}
+
+    <div class="output">
+
+        <h2>Generated Caption</h2>
+
+        <p>{{ caption }}</p>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
